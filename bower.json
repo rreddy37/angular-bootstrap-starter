@@ -1,0 +1,37 @@
+{
+  "name": "angularjs-spa-starter",
+  "version": "1.1.7",
+  "authors": [
+    "John Makridis <j.makridis7@gmail.com> / https://johnmakridis.github.io"
+  ],
+  "description": "AngularJS Starter Kit to kick start your new project with Bootstrap, Gulp, UI-Router, LocalStorage and more.",
+  "main": "app.js",
+  "keywords": [
+    "angularjs"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/johnmakridis/angular-spa-starter",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.8",
+    "angular-animate": "^1.5.8",
+    "angular-aria": "^1.5.8",
+    "angular-route": "~1.3.13",
+    "angular-sanitize": "~1.3.13",
+    "angular-touch": "^1.5.8",
+    "angular-ui-router": "^0.4.2",
+    "bootstrap":"latest",
+    "sweetalert": "^1.1.3",
+    "angular-local-storage": "^0.5.2",
+    "angular-resource": "^1.6.4",
+    "ngMeta": "^1.0.0",
+    "moment": "^2.18.1"
+  }
+}

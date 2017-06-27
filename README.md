@@ -1,4 +1,4 @@
-# Angular Single Page Web Application (SPA) Starter
+# AngularJS Single Page Web Application (SPA) Starter
 AngularJS Starter Kit to kick start your new project with AngularJS, Bootstrap and Gulp watch/build tasks.<br>
 Based on AngularJS-Boilerplate by [Jozef Butko](https://github.com/jbutko/AngularJS-Boilerplate)
 

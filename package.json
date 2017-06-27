@@ -1,6 +1,6 @@
 {
   "name": "angularjs-spa-starter",
-  "version": "1.1.7",
+  "version": "1.0.0",
   "license": "MIT",
   "description": "AngularJS Starter Kit to kick start your new project with Bootstrap, Gulp, UI-Router, LocalStorage and more.",
   "main": "app/app.js",

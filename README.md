@@ -47,6 +47,6 @@ gulp server-build
 ```
 
 ## Contact
-[https://johnmakridis.github.io](https://johnmakridis.github.io)<br>
+[johnmakridis.github.io](https://johnmakridis.github.io)<br>
 [www.github.com/johnmakridis](http://www.github.com/johnmakridis)<br>
 Released under MIT license

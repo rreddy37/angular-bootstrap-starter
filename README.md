@@ -1,5 +1,6 @@
 # AngularJS-Boilerplate
 AngularJS Starter Kit to kick start your new project with AngularJS, Bootstrap and Gulp watch/build tasks
+Based on AngularJS-Boilerplate by [Jozef Butko](https://github.com/jbutko/AngularJS-Boilerplate)
 
 ## Download
 

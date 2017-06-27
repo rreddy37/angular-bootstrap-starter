@@ -1,16 +1,7 @@
-;(function() {
-
-
+; (function () {
     'use strict';
-
-
     /**
-     * Service for complex localStorage functionality
-     *
-     * @category  factory
-     * @author    Jozef Butko
-     * @example   Inject LocalStorage as the dependency and then use it like this:
-     *
+     * localStorage Service
      * var data = { property: 'name'};
      * // set, get, remove, removeAll and list localStorage values
      * LocalStorage.set('obj', data);
@@ -19,46 +10,40 @@
      * LocalStorage.remove('obj');
      * LocalStorage.removeAll();
      * LocalStorage.list();
-     *
-     * @version   1.0
-     *
      */
+
     angular
-      .module('angularstarter')
-      .factory('LocalStorage', [
-        '$window', '$rootScope', LocalStorageService
-      ]);
-
-
-    //////////////// factory
-
+        .module('angularstarter')
+        .factory('LocalStorage', [
+            '$window', '$rootScope', LocalStorageService
+        ]);
 
     function LocalStorageService($window, $rootScope) {
 
-      /**
-       * Test browser if it supports localStorage
-       */
-      var storage = (typeof window.localStorage === 'undefined') ? undefined : window.localStorage,
-          supported = !(typeof storage === undefined || typeof window.JSON === undefined);
+        /**
+         * Test browser if it supports localStorage
+         */
+        var storage = (typeof window.localStorage === 'undefined') ? undefined : window.localStorage,
+            supported = !(typeof storage === undefined || typeof window.JSON === undefined);
 
         /*
         * whenever localStorage gets updated trigger
         * $digest cicle so all values are refreshed in the view
          */
-        angular.element($window).on('storage', function(event, name) {
-          if (event.key === name) {
-            $rootScope.$apply();
-          }
+        angular.element($window).on('storage', function (event, name) {
+            if (event.key === name) {
+                $rootScope.$apply();
+            }
         });
 
 
         return {
-          set: set,
-          get: get,
-          update: update,
-          remove: remove,
-          removeAll: removeAll,
-          list: list
+            set: set,
+            get: get,
+            update: update,
+            remove: remove,
+            removeAll: removeAll,
+            list: list
         };
 
 
@@ -71,88 +56,88 @@
          * @param {string} name Name of localStorage value
          * @param {object} val  Return stored value
          */
-         function set(name, val) {
-           if (!supported) {
-               console.log('localStorage not supported, make sure you have the $cookies supported.');
-             }
+        function set(name, val) {
+            if (!supported) {
+                console.log('localStorage not supported, make sure you have the $cookies supported.');
+            }
 
-           // in case we already have localStorage with same name alert error msg
-           if (window.localStorage.getItem(name) !== null) {
-             console.warn('localStorage with the name ' + name + ' already exists. Please pick another name.');
-           } else {
-             return $window.localStorage && $window.localStorage.setItem(name, angular.toJson(val));
-           }
-         }
-
-
-         /**
-          * getData from localStorage
-          *
-          * @param  {string} name Name of localStorage value
-          * @return {*}           Stored value
-          */
-         function get(name) {
-           if (!supported) {
-               console.log('localStorage not supported, make sure you have the $cookies supported.');
-             }
-
-           return $window.localStorage && angular.fromJson($window.localStorage.getItem(name));
-         }
+            // in case we already have localStorage with same name alert error msg
+            if (window.localStorage.getItem(name) !== null) {
+                console.warn('localStorage with the name ' + name + ' already exists. Please pick another name.');
+            } else {
+                return $window.localStorage && $window.localStorage.setItem(name, angular.toJson(val));
+            }
+        }
 
 
-         /**
-          * Update already stored data
-          *
-          * @param  {string}  name Name of localStorage value
-          * @param {object}   val  Return stored value
-          */
-         function update(name, val) {
-           if (!supported) {
-               console.log('localStorage not supported, make sure you have the $cookies supported.');
-             }
+        /**
+         * getData from localStorage
+         *
+         * @param  {string} name Name of localStorage value
+         * @return {*}           Stored value
+         */
+        function get(name) {
+            if (!supported) {
+                console.log('localStorage not supported, make sure you have the $cookies supported.');
+            }
 
-           return $window.localStorage && $window.localStorage.setItem(name, angular.toJson(val));
-         }
-
-
-
-         /**
-          * Remove localStorage value
-          *
-          * @param  {string} name Name of localStorage value
-          * @return {boolean}     True/false if the value is removed
-          */
-         function remove(name) {
-           if (!supported) {
-               console.log('localStorage not supported, make sure you have the $cookies supported.');
-           }
-
-           return $window.localStorage && $window.localStorage.removeItem(name);
-         }
+            return $window.localStorage && angular.fromJson($window.localStorage.getItem(name));
+        }
 
 
-         /**
-          * Remove all localStorage values
-          *
-          * @return {boolean}     True/false if the value is removed
-          */
-         function removeAll() {
-           if (!supported) {
-               console.log('localStorage not supported, make sure you have the $cookies supported.');
-           }
+        /**
+         * Update already stored data
+         *
+         * @param  {string}  name Name of localStorage value
+         * @param {object}   val  Return stored value
+         */
+        function update(name, val) {
+            if (!supported) {
+                console.log('localStorage not supported, make sure you have the $cookies supported.');
+            }
 
-           return $window.localStorage && $window.localStorage.clear();
-         }
+            return $window.localStorage && $window.localStorage.setItem(name, angular.toJson(val));
+        }
 
 
-         /**
-          * Return object of all values that are stored on localStorage
-          *
-          * @return {object}    Object with all data stored on localStorage
-          */
-         function list() {
-           return $window.localStorage;
-         }
+
+        /**
+         * Remove localStorage value
+         *
+         * @param  {string} name Name of localStorage value
+         * @return {boolean}     True/false if the value is removed
+         */
+        function remove(name) {
+            if (!supported) {
+                console.log('localStorage not supported, make sure you have the $cookies supported.');
+            }
+
+            return $window.localStorage && $window.localStorage.removeItem(name);
+        }
+
+
+        /**
+         * Remove all localStorage values
+         *
+         * @return {boolean}     True/false if the value is removed
+         */
+        function removeAll() {
+            if (!supported) {
+                console.log('localStorage not supported, make sure you have the $cookies supported.');
+            }
+
+            return $window.localStorage && $window.localStorage.clear();
+        }
+
+
+        /**
+         * Return object of all values that are stored on localStorage
+         *
+         * @return {object}    Object with all data stored on localStorage
+         */
+        function list() {
+            return $window.localStorage;
+        }
 
     }
 

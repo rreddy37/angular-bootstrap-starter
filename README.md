@@ -5,7 +5,7 @@ Based on AngularJS-Boilerplate by [Jozef Butko](https://github.com/jbutko/Angula
 ## Download
 
 ```bash
-git clone https://github.com/johnmakridis/angular-spa-starter.git
+git clone https://github.com/johnmakridis/angular-bootstrap-starter.git
 ```
 
 ## 1. Setup

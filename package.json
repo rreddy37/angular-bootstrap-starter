@@ -41,7 +41,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/johnmakridis/angular-spa-starter.git"
+    "url": "https://github.com/johnmakridis/angular-bootstrap-starter.git"
   },
   "keywords": [
     "angular",
@@ -53,5 +53,5 @@
     "spa"
   ],
   "author": "John Makridis",
-  "homepage": "https://github.com/johnmakridis/angular-spa-starter"
+  "homepage": "https://github.com/johnmakridis/angular-bootstrap-starter"
 }

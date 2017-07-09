@@ -10,7 +10,7 @@
     "angularjs"
   ],
   "license": "MIT",
-  "homepage": "https://github.com/johnmakridis/angular-spa-starter",
+  "homepage": "https://github.com/johnmakridis/angular-bootstrap-starter",
   "private": true,
   "ignore": [
     "**/.*",

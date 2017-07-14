@@ -24,10 +24,6 @@
 
             $scope.year = moment().format("YYYY");
 
-            $scope.asdf = function(){
-                
-            }
-
         }])
 
 
